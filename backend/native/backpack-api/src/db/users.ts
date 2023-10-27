@@ -302,6 +302,8 @@ const transformUser = (
  */
 export const createUser = async (
   username: string,
+  firstname: string,
+  lastname: string | null,
   blockchainPublicKeys: Array<{ blockchain: Blockchain; publicKey: string }>,
   waitlistId?: string | null,
   referrerId?: string
@@ -338,6 +340,8 @@ export const createUser = async (
           invitation_id: inviteCode,
           waitlist_id: waitlistId,
           referrer_id: referrerId,
+          firstname: firstname,
+          lastname: lastname,
         },
       },
       {
